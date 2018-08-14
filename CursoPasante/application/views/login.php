@@ -29,20 +29,20 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal">
+            <form class="form-horizontal" action="" method="post">
               <div class="box-body">
                 <div class="form-group">
                   <label for="input" class="col-sm-2 control-label">Username</label>
 
                   <div class="col-sm-10">
-                    <input type="username" class="form-control" name="username" id="username" placeholder="Username">
+                    <input type="username" class="form-control" name="username" id="username" placeholder="username">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
 
                   <div class="col-sm-10">
-                    <input type="password" class="form-control" name="password" id="password"  placeholder="Password">
+                    <input type="password" class="form-control" name="password" id="password"  placeholder="password">
                   </div>
                 </div>
                 <div class="form-group">
