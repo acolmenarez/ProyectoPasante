@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Inicio</title>
+	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(). "assets/bower_components/bootstrap/dist/css/bootstrap.min.css"?> ">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(). "assets/dist/css/AdminLTE.min.css"; ?>">
   <style type="text/css">
@@ -18,14 +18,14 @@
         width: 25%;
         margin: 180px auto;
       }
-
+     
   </style>
 
 </head>
 <body>
  <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Horizontal Form</h3>
+              <h3 class="box-title">Log in</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -58,7 +58,7 @@
               <!-- /.box-body -->
               <div class="box-footer">
                 <button type="submit" class="btn btn-default">Cancel</button>
-                <button type="submit" name="password" id="password" class="btn btn-info pull-right">Sign in</button>
+                <button type="submit" name="psw" id="psw" class="btn btn-info pull-right">Sign in</button>
          </div>
 </body>
 </html>
