@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registry</title>
+	<title>Edit</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(). "assets/bower_components/bootstrap/dist/css/bootstrap.min.css"?> ">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(). "assets/dist/css/AdminLTE.min.css"; ?>">
 </head>
@@ -15,9 +15,9 @@
   <div class="register-box-body">
     <p class="login-box-msg">Register a new membership</p>
 
-    <form action="<?php echo base_url(); ?>user/createuser" method="post">
+    <form action="<?php echo base_url(); ?>user/update/<?=$id?>" method="post">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="username" id="username" placeholder="username">
+        <input type="text" class="form-control" name="username" id="username" value="<?= $users->result()[0]->username ?>" placeholder="username">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
@@ -35,14 +35,12 @@
       <div class="row">
         <div class="col-xs-8">
           <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> I agree to the <a href="#">terms</a>
-            </label>
+           
           </div>
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" name="register" id="register" class="btn btn-primary btn-block btn-flat">Register</button>
+          <button type="submit" name="edituser" id="edituser" class="btn btn-primary btn-block btn-flat">Edit user</button>
         </div>
         <!-- /.col -->
       </div>

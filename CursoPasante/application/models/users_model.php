@@ -11,20 +11,24 @@ class Users_model extends CI_Model {
 		$this->load->library('form_validation');
 	}
 
-	public function login($username,$password){
+    function login($username,$password)
+	{
 
 		$this->db->where('username',$username);
 		$this->db->where('password',$password);
-		$q = $this->db->get('users');
-		if($q->num_rows()>0){
+		$query = $this->db->get('users');
+		if($query->num_rows()>0){
 
 		return true;
-	}else{
+	}else
+	{
 
 		return false;
 	}
-  }
-  function createuser($data){
+    }
+
+    function createuser($data)
+    {
 		$this->db->insert('users',array(
 		'username' => $data['username'],
 		'password' => $data['password'],
@@ -32,6 +36,46 @@ class Users_model extends CI_Model {
 		'type' => $data['type']));	
 			
 	}
-	
+
+	function link()
+	{
+		$query = $this->db->get('users');
+		if($query->num_rows() > 0) return $query;
+		else return false;
+	}
+
+	function links($id)
+	{
+		$this->db->where('idUser',$id);
+		$query = $this->db->get('users');
+		if($query->num_rows() > 0) return $query;
+		else return false;
+
+	}
+
+	function updateuser($id,$data)
+	{
+		$datos = array(
+	 		'username' => data['username'],
+			'password' =>  data['password'],
+			'email' =>  data['email'],
+			'type' =>  data['type']
+	 	);
+	    $this->db->where('iduser',$id);
+	    $query = $this->db->update('users',$datos);
+	}
+
+	function see()
+	{
+	   $query = $this->db->get('users');
+	   if($query->num_rows()>0){
+
+		return $query;
+	}else
+	{
+
+		return false;
+	}
+	}
 }
 ?>

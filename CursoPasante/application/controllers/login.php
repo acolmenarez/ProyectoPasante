@@ -19,7 +19,7 @@ class Login extends CI_Controller {
 				$this->session->set_userdata('username',$_POST['username']);
 			redirect('user');
 	}else{
-			redirect('login');
+			redirect('login#bad-password');
 		 }
 	  }
 	$this->load->view('login');
