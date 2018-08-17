@@ -40,7 +40,7 @@ class User extends CI_Controller {
 		);
 
 		$this->users_model->createuser($data);
-		$this->load->view('user');
+		$this->load->view('home',$data);
 	 }  
 
  	public function edit()
@@ -51,9 +51,9 @@ class User extends CI_Controller {
 	public function edituser()
 	 {
 	 	$data['id'] = $this->uri->segment(3);
-	 	$data['user'] = $this->users_model->link($data['id']);
+	 	$data['users'] = $this->users_model->links($data['id']);
 	
-	 	$this->load->view('edituser, $data');
+	 	$this->load->view('edituser', $data);
 	 }
 
 	 public function update()
@@ -66,6 +66,14 @@ class User extends CI_Controller {
 	 	);
 	 	$this->users_model->updateuser($this->uri->segment(3),$data);
 		redirect(base_url());
+	 }
+
+	 public function delete()
+	 {
+	 	$id= $this->uri->segment(3);
+	 	$this->users_model->deleteuser($id);
+	 	redirect ('home');
+	
 	 }
 		
 }

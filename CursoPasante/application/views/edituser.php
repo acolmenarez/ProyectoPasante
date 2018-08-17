@@ -9,13 +9,13 @@
 	<body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href=""><b>Admin</b>LTE</a>
+    <a href=""><b>Edit</b>User</a>
   </div>
 
   <div class="register-box-body">
-    <p class="login-box-msg">Register a new membership</p>
+    <p class="login-box-msg">Edit user data</p>
 
-    <form action="<?php echo base_url(); ?>user/update/<?=$id?>" method="post">
+    <form action="<?php echo base_url(); ?>user/edituser/<?=$id?>" method="post">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" name="username" id="username" value="<?= $users->result()[0]->username ?>" placeholder="username">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>

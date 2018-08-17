@@ -17,7 +17,7 @@ class Login extends CI_Controller {
 		if(isset($_POST['psw'])){
 			if($this->users_model->login($_POST['username'],md5($_POST['password']))){
 				$this->session->set_userdata('username',$_POST['username']);
-			redirect('user');
+			redirect('home');
 	}else{
 			redirect('login#bad-password');
 		 }

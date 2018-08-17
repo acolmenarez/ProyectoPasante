@@ -13,21 +13,20 @@ class Home extends CI_Controller {
 	
 	public function index()
 	{
-		$data = array(
-    	'link' => $this->users_model->see(),
-    	'dump' => 0
-    	 );
+		
+	$data['segmento'] = $this->uri->segment(3); 
+		 
+		if(!$data['segmento']){
+			$data['users'] = $this->users_model->link(); 
+		}
+		else{
+			$data['users'] = $this->users_model->links($data['segmento']);
+		}
+		
+		$this->load->view('headers');
+		$this->load->view('home',$data);
+	  }	
 
-    	$this->load->view('home');
-	}
 
-	public function see()
-	{
-		$data = array(
-    	'link' => $this->users_model->see(),
-    	'dump' => 0
-    	 );
-		$this->load->view('home');
-	 }
  }	
  ?>

@@ -9,11 +9,11 @@
 	<body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href=""><b>Admin</b>LTE</a>
+    <a href=""><b>Register</b>User</a>
   </div>
 
   <div class="register-box-body">
-    <p class="login-box-msg">Register a new membership</p>
+    <p class="login-box-msg">Register a new user</p>
 
     <form action="<?php echo base_url(); ?>user/createuser" method="post">
       <div class="form-group has-feedback">
@@ -25,7 +25,7 @@
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="password" id="password" placeholder="password">
+        <input type="password" class="form-control" name="password" id="password" placeholder="password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">

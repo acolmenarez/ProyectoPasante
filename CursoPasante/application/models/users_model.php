@@ -65,17 +65,9 @@ class Users_model extends CI_Model {
 	    $query = $this->db->update('users',$datos);
 	}
 
-	function see()
+	function deleteuser($id)
 	{
-	   $query = $this->db->get('users');
-	   if($query->num_rows()>0){
-
-		return $query;
-	}else
-	{
-
-		return false;
-	}
+	  	$this->db->delete('users', array('idUser'=>$id));
 	}
 }
 ?>

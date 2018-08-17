@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(). "assets/bower_components/bootstrap/dist/css/bootstrap.min.css"?> ">
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url(). "assets/dist/css/AdminLTE.min.css"; ?>">
-</head>
-<body>
+
 <!-- Main content -->
     <section class="content">
       <div class="row">
@@ -22,27 +15,43 @@
                   <th>User</th>
                   <th>Email</th>
                   <th>Type</th>
+                  <th>Options</th>
                 </tr>
-
-                  <?php
-                  foreach($link->result() as $row){
+                      <?php
+                          if($users){
+                              foreach ($users->result() as $users) { ?>
                       
-                  echo "</thead>";
-                  echo "<tbody>";
-                      echo  "<tr>";
-                             echo "<td>".$row->username."</td>";
-                             echo "<td>".$row->email."</td>";
-                             echo "<td>".$row->type."</td>";
-                     echo "</tr>";
+                  </thead>
+                        <tbody>
+                            <tr>
+                                <td><?= $users->username ?></td>
+                                <td><?= $users->email ?></td>
+                                <td><?= $users->type ?></td>
+                                <td><a type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger" href="<?=base_url()?>user/edit/<?=$users->idUser?>"> Edit
+                                 </a>
+                                 <a type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-warning" href="<?=base_url()?>user/delete/<?=$users->idUser?>"> Delete 
+                                 </a>
 
-                  echo "</tfoot>";
+                                </td>
+                           </tr>
 
-                 }
-                ?>
+                  </tfoot>
+
+                 <?php }
+
+                        }else {
+                               echo "<p>Error en la aplicacion</p>";
+                                 } ?>
               </table>
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
+           </div>
+          </div>
+        </div>
+      </div>
+
+
 </body>
 </html>

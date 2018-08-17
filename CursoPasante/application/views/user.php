@@ -11,7 +11,7 @@
 	foreach ($users->result() as $users) { ?>
 		<ul>
 			
-			<li><a href="<?= $users->idUser ?>"> <?= $users->username ?> </a></li>
+			<li><a href=""> <?= $users->username ?> </a></li>
 
 		</ul>
 
