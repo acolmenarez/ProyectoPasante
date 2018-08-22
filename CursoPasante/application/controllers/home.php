@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends CI_Controller 
+{
 
 
 	public function __construct()
-	  {
-		
+	 {
 		parent:: __construct(); 
 		$this->load->model('users_model');
 	  }
@@ -14,14 +14,13 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		
-	$data['segmento'] = $this->uri->segment(3); 
+		$data['segmento'] = $this->uri->segment(3); 
 		 
-		if(!$data['segmento']){
+			if(!$data['segmento']){
 			$data['users'] = $this->users_model->link(); 
-		}
-		else{
+			}else{
 			$data['users'] = $this->users_model->links($data['segmento']);
-		}
+			}
 		
 		$this->load->view('headers');
 		$this->load->view('home',$data);

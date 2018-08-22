@@ -27,7 +27,7 @@
                                 <td><?= $users->username ?></td>
                                 <td><?= $users->email ?></td>
                                 <td><?= $users->type ?></td>
-                                <td><a type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger" href="<?=base_url()?>user/edit/<?=$users->idUser?>"> Edit
+                                <td><a type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger" href="<?=base_url()?>user/edituser/<?=$users->idUser?>"> Edit
                                  </a>
                                  <a type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-warning" href="<?=base_url()?>user/delete/<?=$users->idUser?>"> Delete 
                                  </a>

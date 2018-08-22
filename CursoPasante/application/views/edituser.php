@@ -15,21 +15,21 @@
   <div class="register-box-body">
     <p class="login-box-msg">Edit user data</p>
 
-    <form action="<?php echo base_url(); ?>user/edituser/<?=$id?>" method="post">
+    <form action="<?php echo base_url(); ?>user/update ?>" method="post">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" name="username" id="username" value="<?= $users->result()[0]->username ?>" placeholder="username">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" name="email" id="email" placeholder="email">
+        <input type="email" class="form-control" name="email" id="email" value="<?= $users->result()[0]->email ?>" placeholder="email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="password" id="password" placeholder="password">
+        <input type="text" class="form-control" name="password" id="password" value="<?= $users->result()[0]->password?>" placeholder="password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="type" id="type" placeholder="type">
+        <input type="text" class="form-control" name="type" id="type" value="<?= $users->result()[0]->type ?>" placeholder="type">
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
       </div>
       <div class="row">

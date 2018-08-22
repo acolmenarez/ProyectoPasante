@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends CI_Controller {
+class User extends CI_Controller 
+{
 	
 
 	public function __construct()
 	{
-		
 		parent:: __construct(); 
 		$this->load->model('users_model');
 		$this->load->helper('form');
@@ -15,23 +15,23 @@ class User extends CI_Controller {
 	{
 		$data['segmento'] = $this->uri->segment(3); 
 		 
-		if(!$data['segmento']){
+			if(!$data['segmento']){
 			$data['users'] = $this->users_model->link(); 
-		}
-		else{
+			}else{
 			$data['users'] = $this->users_model->links($data['segmento']);
-		}
-		
+			}
 		
 		$this->load->view('user',$data);
-	  }	
+	 }	
 
-	public function create(){
+
+	public function create()
+	{
 		$this->load->view('newuser');
 	 }  
 
-	public function createuser(){
-
+	public function createuser()
+	{
 		$data = array(
 			'username' => $this->input->post('username'),
 			'password' => $this->input->post('password'),
@@ -65,7 +65,7 @@ class User extends CI_Controller {
 			'type' => $this->input->post('type')
 	 	);
 	 	$this->users_model->updateuser($this->uri->segment(3),$data);
-		redirect(base_url());
+		redirect('user');
 	 }
 
 	 public function delete()

@@ -19,12 +19,9 @@
               <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-info"><a href="<?=site_url('user/create') ?>">
                Register User</a>
               </button>
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger"><a href="<?=site_url('user/edit')?>">
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger"><a href="<?=site_url('user/edituser/1')?>">
                Edit User</a>
               </button>
-              <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-warning"><a href="<?=site_url('user/') ?>">
-                Delete User</a>
-              </button>
-              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default"><a href="<?=site_url('login/logout') ?>">Logout</a>
+              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default"><a href="<? site_url('login/logout') ?>">Logout</a>
               </button>
            
